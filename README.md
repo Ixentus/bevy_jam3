@@ -1,3 +1,7 @@
+# Bevy jam 3 game (title pending)
+
+This is the start of my Bevy game jam 3 entry. The following is the Readme from the template I'm starting out with:
+
 # Bevy GitHub CI Template
 
 This repo show how to set up CI on a GitHub project for Bevy.
