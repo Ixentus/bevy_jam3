@@ -7,6 +7,8 @@ use bevy_framepace::{FramepacePlugin, FramepaceSettings, Limiter};
 use colors::*;
 
 pub mod colors;
+pub mod game;
+pub mod grid;
 pub mod splash;
 
 #[derive(Clone, PartialEq, Eq, Default, Debug, Hash, States)]
@@ -36,5 +38,7 @@ fn main() {
         .add_state::<AppState>()
         .add_startup_system(splash::setup)
         .add_system(splash::splash.in_set(OnUpdate(AppState::Splash)))
+        .add_system(grid::setup_grid)
+        .add_system(game::setup.in_schedule(OnEnter(AppState::InGame)))
         .run();
 }

@@ -17,9 +17,11 @@ pub fn splash(
     mut state: ResMut<NextState<AppState>>,
     time: Res<Time>,
     icon: Query<Entity, With<Sprite>>,
+    camera: Query<Entity, With<Camera>>,
 ) {
     if time.startup().elapsed() > Duration::new(1, 0) {
         state.set(AppState::InGame);
         commands.entity(icon.single()).despawn();
+        commands.entity(camera.single()).despawn();
     }
 }
